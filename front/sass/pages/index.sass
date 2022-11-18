@@ -7,13 +7,12 @@ $text: #292929
 
 $font-suisse-bold: SuisseIntl-Bold, sans-serif //700
 $font-suisse-reg: SuisseIntl-Regular, sans-serif //400
-$font-suisse-semb: SuisseIntl-SemiBold, sans-serif //600
+$font-suisse-semb: SuisseIntl-SemiBold, sans-serif //600 //
 $font-wulkan: WulkanDisplay, sans-serif //
 
 body
   -webkit-tap-highlight-color: rgba(0,0,0,0)
   overscroll-behavior: none
-  background: black
   img
     max-width: 100%
     height: auto
@@ -21,7 +20,7 @@ body
 
 .banner
   overflow: hidden
-  padding: 40px 0
+  padding: 70px 0 27px
   @media screen and (min-width: 700px) and (orientation: landscape) and (min-height: 451px)
     background: url('../img/bg-desc-2.jpg') no-repeat 50% 0/cover
   @media screen and (min-width: 601px) and (max-width: 1120px) and (orientation: portrait)
@@ -31,102 +30,38 @@ body
   @media (max-width: 920px) and (orientation: landscape) and (max-height: 450px)
     background: url("../img/bg-tab-2.jpg") no-repeat 50% 0/cover
   &__container
-    max-width: 1220px
-    padding: 0 15px
+    max-width: 1430px
+    padding: 0 60px
     margin: 0 auto
-    position: relative
-  &__row
     display: flex
-    justify-content: space-between
-    align-items: center
-  &__info
-    display: flex
-    flex-direction: column
     align-items: flex-start
-  &__title
-    font-family: $font-suisse-bold
-    font-size: 69px
-    line-height: 75px
-    letter-spacing: 0.04em
-    text-transform: uppercase
+    justify-content: space-between
+  &__text
+    position: relative
+    z-index: 5
+    font-family: $font-suisse-semb
+    font-size: 60px
+    line-height: 84px
     color: #EDEDED
-    margin: 0 0 30px 0
+    text-transform: uppercase
+    max-width: 525px
     span
       font-family: $font-wulkan
-  &__button
-    display: inline-block
-    font-family: $font-suisse-semb
-    font-size: 24px
-    line-height: 31px
-    letter-spacing: 0.08em
-    text-transform: uppercase
-    color: $blue
-    padding: 29px 75px 27px
-    background: $green
-    margin: 0 0 30px 0
-
-    transition: background-color .3s ease
-    &:hover
-      background: $green-hover
-  &__link
-    font-family: $font-suisse-reg
-    font-size: 16px
-    line-height: 21px
-    text-align: center
-    letter-spacing: 0.01em
-    text-decoration-line: underline
-    color: #FFFFFF
-    &:hover
-      text-decoration-line: none
-  &__dep
-    position: absolute
-    top: 57%
-    right: 40px
-    transform: translateY(-50%)
-    display: flex
+  &__image
+    max-width: 700px
+    position: relative
     z-index: 2
-    &-left,
-    &-right
-      display: flex
-      flex-direction: column
-      align-items: center
-    &-left
-      margin: 80px 35px 0 0
-    .in
-      font-family: $font-suisse-semb
-      font-size: 64px
-      line-height: 79px
-      letter-spacing: 0.01em
-      text-transform: uppercase
-      opacity: 0.35
-      color: transparent
-      -webkit-text-stroke-width: 1.5px
-      -webkit-text-stroke-color: #EDEDED
-      &-none
-        display: none
-      &-mob
-        display: none
-    p
-      font-family: $font-suisse-semb
-      font-size: 64px
-      line-height: 65px
-      text-align: center
-      letter-spacing: 0.01em
-      text-transform: uppercase
-      color: #EDEDED
-      span
-        font-family: $font-suisse-semb
-        display: block
-        font-size: 40px
-        line-height: 52px
-        white-space: nowrap
-        margin-top: -4px
-    &-right
-      padding: 10px 0 0 0
-      .in
-        line-height: 82px
-        &-last
-          margin: 0 0 91px 0
-      p
-        line-height: 75px
-
+    &::before
+      z-index: 1
+      content: ''
+      position: absolute
+      width: 130%
+      height: 100%
+      background: radial-gradient(50% 50% at 50% 50%, #FF267E 0%, rgba(255, 38, 126, 0) 100%)
+      filter: blur(100px)
+      top: -30px
+      left: 50%
+      transform: translateX(-50%)
+    img
+      position: relative
+      z-index: 2
